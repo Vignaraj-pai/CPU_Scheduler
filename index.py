@@ -12,7 +12,7 @@ from srtf import SRTF
 from rr import RR
 from pnp import PNP
 from pp import PP
-
+import sys
 
 Switcher = {
     1 : FCFS,
@@ -23,10 +23,14 @@ Switcher = {
     6 : PP
 }
 
-def switch(choice, arrival_times, burst_times):
-    return Switcher.get(choice, lambda: "Invalid choice")(arrival_times, burst_times)
+
+def switch(choice, arrival_times, burst_times, text_type):
+    return Switcher.get(choice, lambda: "Invalid choice")(arrival_times, burst_times, text_type)
 
 if __name__ == "__main__":
+    
+    text_type = input("Enter input type : (long, medium, short first? )");
+    
     N = int(input("Enter number of processes: "))
 
     arrival_times = []
@@ -35,8 +39,9 @@ if __name__ == "__main__":
         arrival_times.append(int(input("Enter arrival time of process {}: ".format(i+1))))
 
     burst_times = []
-
+    
     for i in range(N):
-        burst_times.append(int(input("Enter burst time of process {}: ".format(i+1))))
+        burst_times .append(int(input("Enter burst time of process {}: ".format(i+1))))
 
-    switch(int(input("Enter choice: ")), arrival_times, burst_times)
+    switch(int(input("Enter choice: ")), arrival_times, burst_times, text_type)
+
