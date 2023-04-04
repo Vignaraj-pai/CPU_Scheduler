@@ -5,8 +5,9 @@ import matplotlib.pyplot as plt
 from operator import itemgetter
 
 
-def SRTF(arrival_times, burst_times):
-    print("SHORTEST REMAINING TIME FIRST SCHEDULLING")
+def SRTF(arrival_times, burst_times, text_type):
+    print("\n\nSHORTEST REMAINING TIME FIRST SCHEDULLING")
+    print("----------------------------------")
     process_data = []
     for i in range(len(arrival_times)):
         temporary = []
@@ -104,4 +105,4 @@ def SRTF(arrival_times, burst_times):
     fig.update_layout(title='Gantt Chart', xaxis_title='Time', yaxis_title='Process')
     
     # save the figure
-    fig.write_image("output_images/SRTF_gantt.png")
+    fig.write_image("output_images/srtf/srtf_Gantt_Chart_" + text_type + ".png")

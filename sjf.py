@@ -5,7 +5,8 @@ import matplotlib.pyplot as plt
 from operator import itemgetter
 
 def SJF(arrival_times, burst_times, text_type):
-    print("SHORTEST JOB FIRST SCHEDULLING")
+    print("\n\nSHORTEST JOB FIRST SCHEDULLING")
+    print("----------------------------------")
     process_data = []
     for i in range(len(arrival_times)):
         temporary = []
@@ -106,5 +107,5 @@ def SJF(arrival_times, burst_times, text_type):
         fig.add_trace(go.Scatter(x=[start_time[i], exit_time[i]], y=[0, 0], mode='lines+text', name=process_data[i][0],
                                  text=[process_data[i][0], process_data[i][4]], textposition='top center'))
     fig.update_layout(title='Gantt Chart', xaxis_title='Time', yaxis_title='Processes')
-    fig.write_image("output_images/sjf_gantt" + text_type + ".png")
+    fig.write_image("output_images/sjf_Gantt_Chart_" + text_type + ".png")
                   

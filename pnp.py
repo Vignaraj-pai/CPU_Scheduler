@@ -6,7 +6,8 @@ import matplotlib.pyplot as plt
 from operator import itemgetter
 
 def PNP(arrival_times, burst_times, text_types):
-    print("Priority Non-Preemptive Scheduling")
+    print("\n\nPriority Non-Preemptive Scheduling")
+    print("=================================")
     process_data = []
     for i in range(len(arrival_times)):
         temporary = []
@@ -87,5 +88,5 @@ def PNP(arrival_times, burst_times, text_types):
     
     
     # save the gantt chart
-    fig.write_image("output_images/pnp/gantt_chart_" + text_types + ".png")
+    fig.write_image("output_images/pnp/pnp_Gantt_Ghart_" + text_types + ".png")
 

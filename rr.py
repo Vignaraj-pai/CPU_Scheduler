@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 from operator import itemgetter
 
 def RR(arrival_times, burst_times, text_type):
+    print("\n\nROUND ROBIN SCHEDULLING")
+    print("-----------------------")
     process_data = []
     for i in range(len(arrival_times)):
         temporary = []
@@ -155,7 +157,7 @@ def RR(arrival_times, burst_times, text_type):
     '''
     Sort processes according to the Process ID
     '''
-    print("Process_ID\tArrival_Time\tRem_Burst_Time\tCompleted\tOG_Burst_Time\tCompletion_Time\tTurnaround_Time\tWaiting_Time")
+    print("\n\nProcess_ID\tArrival_Time\tRem_Burst_Time\tCompleted\tOG_Burst_Time\tCompletion_Time\tTurnaround_Time\tWaiting_Time")
     for i in range(len(process_data)):
         for j in range(len(process_data[i])):
             print(process_data[i][j], end="\t\t    ")
@@ -179,4 +181,4 @@ def RR(arrival_times, burst_times, text_type):
     plt.ylabel('Process ID')
     plt.title('Gantt Chart')
     
-    plt.savefig('output_images/round_robin/gantt_chart_' + text_type + '.png')
+    plt.savefig('output_images/round_robin/rr_Gantt_Chart_' + text_type + '.png')

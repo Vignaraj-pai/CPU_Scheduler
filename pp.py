@@ -6,6 +6,8 @@ import matplotlib.pyplot as plt
 from operator import itemgetter
 
 def PP(arrival_times, burst_times, text_type):
+    print("\n\nPRIORITY PREEMPTIVE SCHEDULLING")
+    print("----------------------------------")
     process_data = []
     for i in range(len(arrival_times)):
         temporary = []
@@ -103,7 +105,7 @@ def PP(arrival_times, burst_times, text_type):
     '''
     Sort processes according to the Process ID
     '''
-    print("Process_ID  Arrival_Time  Rem_Burst_Time   Priority        Completed  Orig_Burst_Time Completion_Time  Turnaround_Time  Waiting_Time")
+    print("\n\nProcess_ID  Arrival_Time  Rem_Burst_Time   Priority        Completed  Orig_Burst_Time Completion_Time  Turnaround_Time  Waiting_Time")
     for i in range(len(process_data)):
         for j in range(len(process_data[i])):
             print(process_data[i][j], end="\t\t")
@@ -125,4 +127,4 @@ def PP(arrival_times, burst_times, text_type):
     fig.update_layout(title='Gantt Chart', xaxis_title='Time', yaxis_title='Process')
     
     # save figure
-    fig.write_image("output_images/pp/gantt_chart_" + text_type + ".png")
+    fig.write_image("output_images/pp/pp_Gantt_Chart_" + text_type + ".png")
